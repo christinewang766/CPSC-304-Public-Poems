@@ -1,0 +1,30 @@
+/*.dropdown {*/
+/*    display: inline-block;*/
+/*}*/
+
+/*.dropdown-content {*/
+/*    display: none;*/
+/*    position: absolute;*/
+/*    background-color: #f9f9f9;*/
+/*}*/
+
+/*.dropdown-content a {*/
+/*    float: none;*/
+/*    display: block;*/
+/*}*/
+/*.show {*/
+/*    display: block;*/
+/*}*/
+
+.profileIcon {
+    height: 100px;
+    width: 100px;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}

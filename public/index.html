@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="/styles.css"/>
+    <title>Database Application</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<!-- ========================================================================= -->
+
+<h2>Welcome to Public Poems</h2>
+<button id="resetTables">"Glad to be here!"</button>
+<br/>
+<div id="resetResultMsg"></div>
+
+<br/>
+<hr/>
+<br/>
+
+<!--LOGIN =====================================================================================-->
+<div id="showHideLoginRegister">
+    <h2>Login</h2>
+    <form id="loginForm" method="POST">
+        <label for="loginUsername">Username:</label>
+        <input
+                type="text"
+                id="loginUsername"
+                placeholder="Enter your username"
+                required
+                maxlength="30"
+        />
+        <br/><br/>
+
+        <label for="loginPassword">Password:</label>
+        <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+                required
+                maxlength="50"
+        />
+        <br/><br/>
+
+        <button type="submit">Login</button>
+    </form>
+    <br>
+    <div id="loginMsg"></div>
+
+    <br/>
+    <hr/>
+    <br/>
+
+    <form id="registerForm">
+        <h2>Register</h2>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username"
+               placeholder="Enter your username"
+               required
+               maxlength="30"
+        >
+        <br/><br/>
+
+        <label for="profileicon">Profile Icon</label>
+        <select id="profileicon">
+            <option value="1">Select a profile icon</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br>
+        <br>
+        <label>Default.</label>
+        <img
+                id="profile1"
+                class="profileIcon"
+                src="./profile1.gif"
+                alt="profile1"
+        />
+
+        <label>2.</label>
+        <img
+                id="profile2"
+                class="profileIcon"
+                src="./profile2.jpg"
+                alt="profile2"
+        />
+
+        <label>3.</label>
+        <img
+                id="profile3"
+                class="profileIcon"
+                src="./profile3.jpg"
+                alt="profile3"
+        />
+
+        <label>4.</label>
+        <img
+                id="profile4"
+                class="profileIcon"
+                src="./profile4.jpg"
+                alt="profile4"
+        />
+
+        <label>5.</label>
+        <img
+                id="profile5"
+                class="profileIcon"
+                src="./profile5.jpg"
+                alt="profile5"
+        />
+
+        <br/><br/>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"
+               placeholder="Enter your password"
+               required
+               maxlength="50">
+        <br/><br/>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <br/>
+    <hr/>
+    <br/>
+</div>
+
+<!-- ===================================================================================== -->
+<script src="/loginScripts.js"></script>
+</body>
+</html>

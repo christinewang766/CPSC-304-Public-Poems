@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <!-- This meta tag ensures that the website renders correctly across different device sizes, enhancing mobile responsiveness. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Link to the external CSS stylesheet. Uncomment if you wish to customize or add styling. -->
+    <link rel="stylesheet" href="/styles.css"/>
+    <title>Database Application</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================================================= -->
+
+<h2>Reset tables</h2>
+<button id="resetTables">Logout</button>
+<br/>
+<div id="resetResultMsg"></div>
+
+<br/>
+<hr/>
+<br/>
+
+<!-- ========================================================================= -->
+<header>
+    <nav>
+        <button>
+           <a href="privateprofile.html">Your Profile</a>
+        </button>
+    </nav>
+</header>
+<br/>
+<hr/>
+
+<div id="adminCentre">
+    <h2>Admin Centre</h2>
+    <br>
+    <span>Edit any user profile!</span>
+    <span>Note: you can't change their usernames--that's too personal!</span>
+    <br>
+    <table id="allUsers" border="1">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Dsid</th>
+            <th>Password</th>
+            <th>Profile Icon</th>
+        </tr>
+        </thead>
+        <tr>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div id="showUpdate">
+        <h2>Update selected profile</h2>
+        <form id="updateProfileForm">
+            <label for="updateNewDsid">Dashboard Theme: </label>
+            <select id="updateNewDsid">
+                <option></option>
+            </select>
+            <br/><br/>
+            <label for="updateNewPassword">Password: </label>
+            <input type="text" id="updateNewPassword" name="updateNewPassword"
+                   placeholder="Enter your new password"
+                   maxlength="50">
+            <br/><br/>
+            <label for="updateNewProfileicon">Profile Icon: </label>
+            <select id="updateNewProfileicon">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+
+            <br>
+            <br>
+            <label>Default.</label>
+            <img
+                    id="updateProfile1"
+                    class="profileIcon"
+                    src="./profile1.gif"
+                    alt="profile1"
+                    width="200"
+                    height="200"
+            />
+
+            <label>2.</label>
+            <img
+                    id="updateProfile2"
+                    class="profileIcon"
+                    src="./profile2.jpg"
+                    alt="profile2"
+                    width="200"
+                    height="200"
+            />
+
+            <label>3.</label>
+            <img
+                    id="updateProfile3"
+                    class="profileIcon"
+                    src="./profile3.jpg"
+                    alt="profile3"
+                    width="200"
+                    height="200"
+            />
+
+            <label>4.</label>
+            <img
+                    id="updateProfile4"
+                    class="profileIcon"
+                    src="./profile4.jpg"
+                    alt="profile4"
+                    width="200"
+                    height="200"
+            />
+
+            <label>5.</label>
+            <img
+                    id="updateProfile5"
+                    class="profileIcon"
+                    src="./profile5.jpg"
+                    alt="profile5"
+                    width="200"
+                    height="200"
+            />
+
+            <br/><br/>
+
+            <button type="submit"> update</button>
+            <br>
+        </form>
+        <div id="updateProfileResultMsg"></div>
+    </div>
+    <br>
+    <br>
+</div>
+<!-- ========================================================================= -->
+<h2>Join a community!</h2>
+<table id="communities">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Community size</th>
+        <th>join</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<br/>
+<div id="joinCommunityMsg"></div>
+<br/>
+<hr/>
+<br/>
+
+<h2>Visit a profile</h2>
+<select name="Profile" id="selectprofile" size="5">
+
+</select>
+
+<button id="searchprofile" type="button"> Visit</button>
+
+<br/>
+<hr/>
+<br/>
+
+
+<!--<nav>-->
+<!--    <a href="/communities.html">Communities</a> |-->
+<!--    <a href="/dashboard-style.html">Dashboard Style</a> |-->
+<!--    <a href="/profile.html">Profile</a> |-->
+
+<!--    <div class="dropdown">-->
+<!--        <button class="dropbtn" onclick="myFunction()">Your communities</button>-->
+<!--        <div class="dropdown-content" id="myDropdown">-->
+<!--            <a href="/communities/complain.html">LGBTQ2</a>-->
+<!--            <a href="/communities/bipoclgbt.html">BIPOC</a>-->
+<!--            <a href="/communities/catowner.html">Tumblr 2016 Vibes</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<!--<br/>-->
+<!--<hr/>-->
+<!--<br/>-->
+<!-- ========================================================================= -->
+
+<!--TODO should go on a different page-->
+<!--TODO replace "selected profile" with username-->
+
+<!--<h2>View selected profile</h2>-->
+<!--<h2>Selected profile's contact information</h2>-->
+<!--<table id="selectedcontactinformation" border="1">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>Email</th>-->
+<!--        <th>Instagram</th>-->
+<!--        <th>X</th>-->
+<!--        <th>YouTube</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody></tbody>-->
+<!--</table>-->
+<!--<br>-->
+<!--<br>-->
+<!-- ========================================================================= -->
+
+<h2>Poem Dashboard</h2>
+<br>
+
+<label for="postsTableFilter">Select table columns to view</label><br>
+<span>NOTE: hold CTRL or CMD key while selecting multiple options</span>
+<br>
+<br>
+<select id="postsTableFilter" multiple>
+    <option selected value="*">All columns</option>
+    <option value="postid">Post ID</option>
+    <option value="username">Username</option>
+    <option value="postdate">Post date</option>
+    <option value="content">Content</option>
+    <option value="tag">Tag</option>
+    <option value="title">Title</option>
+    <option value="announcementduration">Announcement duration</option>
+</select>
+
+<button id="filterPostsTable">Done filtering</button>
+<span id="filterMsg"></span>
+<br>
+<br>
+
+<table id="posts" border="1">
+    <thead id="postsThead">
+    <tr>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<h2>Interactions</h2>
+
+<div id="likes"></div>
+<div id="likesbutton"></div>
+
+<table id="comments" border="1">
+    <thead id="commentsThead">
+    <tr>
+        <th>Comment #</th>
+        <th>Username</th>
+        <th>Post #</th>
+        <th>Content</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<div id="makecomment"></div>
+
+<br/>
+<hr/>
+<br/>
+<!-- ========================================================================= -->
+
+<h2>Popular Poems</h2>
+<span>Note: to view post interactions, refer to the Interactions table above.</span>
+<button id="findBusyPosts" type="button"> Find</button>
+<div id="busypostsstatus"></div>
+<h2>Popular Poems List</h2>
+<table id="busysearchresults" border="1">
+    <thead>
+    <tr>
+        <th>postID</th>
+        <th>username</th>
+        <th>postDate</th>
+        <th>content</th>
+        <th>tag</th>
+        <th>title</th>
+        <th>announcementDuration</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<br/>
+<hr/>
+<br/>
+
+<h2>Best Poems</h2>
+<span>Note: to view post interactions, refer to the Interactions table above.</span>
+<button id="findBestPosts" type="button"> Find</button>
+<div id="bestpostsstatus"></div>
+<h2>Popular Poems List</h2>
+<table id="bestsearchresults" border="1">
+    <thead>
+    <tr>
+        <th>postID</th>
+        <th>username</th>
+        <th>postDate</th>
+        <th>content</th>
+        <th>tag</th>
+        <th>title</th>
+        <th>announcementDuration</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<br/>
+<hr/>
+<br/>
+
+<h2>Hall of Fame Super Stars</h2>
+
+<button id="findSuperStars" type="button"> Dazzle Me!</button>
+<div id="starsstatus"></div>
+<h2>Hall of Fame</h2>
+<table id="starsresults" border="1">
+    <thead>
+    <tr>
+        <th>Username</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<br/>
+<hr/>
+<br/>
+
+<!-- ===================================================================================== -->
+<script src="/dashboardScripts.js"></script>
+</body>
+</html>

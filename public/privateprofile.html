@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css"/>
+    <title>Communitites</title>
+</head>
+<body>
+<h1>Your Profile</h1>
+<nav>
+    <a href="dashboard.html">Go to dashboard</a>
+</nav>
+<div id="content"></div>
+
+<h2>Create a post</h2>
+<form id="insertPoststable">
+    <br/><br/>
+
+    <label for="insertContent">Content:</label>
+    <input
+            type="text"
+            id="insertContent"
+            placeholder="Enter Content"
+            required
+    />
+    <br/><br/>
+
+    <label for="insertTag">Tag:</label>
+    <select id="insertTag">
+        <option value="">Select a tag</option>
+        <option value="Love">Love</option>
+        <option value="Nature">Nature</option>
+        <option value="Death">Death</option>
+        <option value="Conflict">Conflict</option>
+        <option value="Friendship">Friendship</option>
+        <option value="Identity">Identity</option>
+        <option value="Hope">Hope</option>
+        <option value="Joy">Joy</option>
+        <option value="Sorrow">Sorrow</option>
+    </select>
+    <br/><br/>
+
+    <label for="insertTitle">Title:</label>
+    <input type="text" id="insertTitle" placeholder="Enter title" required/>
+    <br/><br/>
+
+    <div id = "adminannoucement"></div>
+
+    <label for="addToCollection">Add to a collection:</label>
+    <select id="addToCollection">
+        <option></option>
+    </select>
+    <br>
+    <span>Note: you can create new collections in your profile!</span>
+    <br/><br/>
+
+
+    <button type="submit">insert</button>
+    <br/>
+</form>
+<div id="insertResultMsg"></div>
+
+<br/>
+<hr/>
+<br/>
+
+<h2>Create a post collection</h2>
+<form id="insertPostcollection">
+    <br/><br/>
+
+    <label for="insertPcTitle">Title:</label>
+    <input type="text" id="insertPcTitle" placeholder="Enter title" required/>
+    <br/><br/>
+
+    <button type="submit">insert</button>
+    <br/>
+</form>
+<div id="insertPcResultMsg"></div>
+
+<br/>
+<hr/>
+<br/>
+
+<h2>Post collections</h2>
+<table id="postcollection">
+    <tbody></tbody>
+</table>
+<br>
+<div id="deletePostcollectionMsg"></div>
+<br>
+
+<h2>Viewing your selected post collection</h2>
+<div id="postcollectionMsg"></div>
+<table id="selectedpostcollection" border="1">
+    <thead>
+    <tr>
+        <th>postID</th>
+        <th>username</th>
+        <th>postDate</th>
+        <th>content</th>
+        <th>tag</th>
+        <th>title</th>
+        <th>announcementDuration</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<br/>
+<hr/>
+<br/>
+
+<h2>Followers and Following</h2>
+<table id="profilefollowsprofile" border="1">
+    <thead>
+    <tr>
+        <th>Followers</th>
+        <th>Following</th>
+        <th>Mutuals</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<br>
+<br>
+
+<h2>Create a new dashboard style</h2>
+<span>Note: if you wish to use an existing style, you can change it through your Profile.</span>
+<br/><br/>
+<form id="insertDstable">
+    <br/><br/>
+    <label for="insertDashboardname">Dashboard style name: </label>
+    <input type="text" id="insertDashboardname" name="insertDashboardname"
+           placeholder="New dashboard style name"
+           required maxlength="200">
+    <br/><br/>
+    <label for="insertBgcolour">Dashboard background colour: </label>
+    <input type="color" id="insertBgcolour" name="insertBgcolour"
+           value="#ffffff"
+           required>
+    <br/><br/>
+    <label for="insertTextcolour">Dashboard text colour: </label>
+    <input type="color" id="insertTextcolour" name="insertTextcolour"
+           value="#ffffff"
+           required>
+
+    <br/><br/>
+    <button type="submit">insert</button>
+</form>
+<br/>
+<div id="insertDsResultMsg"></div>
+<br/>
+<hr/>
+<br/>
+
+<h2> Search Dashboard Styles </h2>
+<form id="searchds">
+    <div> Use contains for name, equals for colors or id, and less/greater than for id</div>
+    <select id="field1" name="field1" onchange="changeDSInputType(1)">
+        <option value="dsid">ID</option>
+        <option value="textcolour">Text Colour</option>
+        <option value="bgcolour">Background Colour</option>
+        <option value="dashboardname">Name</option>
+    </select>
+    <select id="op1" name="op1">
+        <option value=" LIKE ">Contains</option>
+        <option value=" = ">Equals</option>
+        <option value=" < ">Less Than</option>
+        <option value=" > ">Greater Than</option>
+    </select>
+    <input type="number" id="value1" name="value1">
+
+    <button id="addDSClause" type="button"> add clause</button>
+    <button id="clearDSSearch"> clear</button>
+    <button id="submitDSQuery" type="button"> search</button>
+    <br>
+</form>
+
+<div id="dsSearchResultMsg"></div>
+
+<h2>Search Dashboard Style Results</h2>
+<table id="dsSearchResults" border="1">
+    <thead>
+    <tr>
+        <th>DSID</th>
+        <th>Name</th>
+        <th>Background Colour</th>
+        <th>Text Colour</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<br/>
+<hr/>
+<br/>
+
+<!-- ========================================================================= -->
+
+<h2>Profile</h2>
+<form id="updateProfileForm">
+    <label for="updateNewDsid">Dashboard Theme: </label>
+    <select id="updateNewDsid">
+        <option></option>
+    </select>
+    <br/><br/>
+    <label for="updateNewPassword">Password: </label>
+    <input type="text" id="updateNewPassword" name="updateNewPassword"
+           placeholder="Enter your new password"
+           maxlength="50">
+    <br/><br/>
+    <label for="updateNewProfileicon">Profile Icon: </label>
+    <select id="updateNewProfileicon">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+
+
+    <br>
+    <br>
+    <label>Default.</label>
+    <img
+            id="updateProfile1"
+            class="profileIcon"
+            src="./profile1.gif"
+            alt="profile1"
+    />
+
+    <label>2.</label>
+    <img
+            id="updateProfile2"
+            class="profileIcon"
+            src="./profile2.jpg"
+            alt="profile2"
+    />
+
+    <label>3.</label>
+    <img
+            id="updateProfile3"
+            class="profileIcon"
+            src="./profile3.jpg"
+            alt="profile3"
+    />
+
+    <label>4.</label>
+    <img
+            id="updateProfile4"
+            class="profileIcon"
+            src="./profile4.jpg"
+            alt="profile4"
+    />
+
+    <label>5.</label>
+    <img
+            id="updateProfile5"
+            class="profileIcon"
+            src="./profile5.jpg"
+            alt="profile5"
+    />
+
+    <br/><br/>
+
+    <button type="submit"> update</button>
+    <br>
+</form>
+<div id="updateProfileResultMsg"></div>
+
+<br>
+<br>
+
+<!-- ========================================================================= -->
+
+<h2>Your contact information</h2>
+<table id="contactinformation" border="1">
+    <thead>
+    <tr>
+        <th>Email</th>
+        <th>Instagram</th>
+        <th>X</th>
+        <th>YouTube</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<br>
+<br>
+<!-- ========================================================================= -->
+
+<h2>Share your contact information</h2>
+<form id="insertContactinformation">
+    <label for="insertEmail">Email: </label>
+    <input type="text" id="insertEmail" name="insertEmail"
+           placeholder="Enter your email"
+           required
+           maxlength="50" />
+    <br/><br/>
+    <label for="insertIgHandle">Instagram handle: </label>
+    <input type="text" id="insertIgHandle" name="insertIgHandle"
+           placeholder="Enter your Instagram handle"
+           maxlength="50" />
+    <br/><br/>
+    <label for="insertXHandle">X handle: </label>
+    <input type="text" id="insertXHandle" name="insertXHandle"
+           placeholder="Enter your X handle"
+           maxlength="50" />
+    <br/><br/>
+    <label for="insertYtHandle">YouTube handle: </label>
+    <input type="text" id="insertYtHandle" name="insertYtHandle"
+           placeholder="Enter your YouTube handle"
+           maxlength="50" />
+    <br/><br/>
+
+    <button type="submit">share</button>
+    <br>
+</form>
+<div id="insertContactinformationMsg"></div>
+
+<br>
+<br>
+
+<!-- ========================================================================= -->
+
+<script src="/privateprofileScripts.js"></script>
+</body>
+</html>
