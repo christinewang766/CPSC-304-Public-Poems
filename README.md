@@ -1,4 +1,9 @@
-Project from my CPSC 304 course. Worked in collaboration with two classmates, who contributed code for the Best/Popular Posts section, Post liking/commenting, Community pages, as well as the Achievements functionality.
+# Public Poems
+
+### Welcome to my full-stack project, Public Poems! 
+This project was from my CPSC 304 course at UBC, and was worked in collaboration with 2 classmates, Jesse and Anneka. Jesse adn Anneka contributed code for the Best/Popular Posts section, Post liking/commenting, Community pages, as well as the Achievements functionality.
+
+### The stack used: JavaScript, HTML, CSS, Express, Oracle SQL*Plus
 
 **Highlights include:**
 - Express as backend framework for building RESTful APIs with Node.js
